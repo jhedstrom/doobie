@@ -48,13 +48,18 @@ class FeatureContext extends BehatContext
    * @Given /^that I am logged in as a user$/
    */
   public function thatIAmLoggedInAsAUser() {
+    // TODO: This method does not at all test what it sais.  Fix it.
     $session = $this->mink->getSession();
     $session->visit('http://drupal.org/node/add/project');
-    $page = $session->getPage();
-    $element = $page
-      ->findLink('Modules');
-    echo $element->getHTML() . "\n";
-    $element->click();
+    $page = $session->getPage()
+      ->findLink('Modules')
+      ->click();
+    $h1 = $session->getPage()
+      ->find('css', 'h1')
+      ->getText();
+    if ($h1 != 'Download & Extend') {
+      throw new Exception('Downlaod and extend was not found.');
+    }
   }
 
   /**
