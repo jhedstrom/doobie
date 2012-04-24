@@ -3,3 +3,11 @@ default:
   paths:
     features:   'features'
     bootstrap:  'bootstrap'
+  context:
+    parameters:
+      default_browser: 'goutte'
+
+selenium:
+  context:
+    parameters:
+      default_browser: 'firefox'
