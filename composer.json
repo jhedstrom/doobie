@@ -3,7 +3,8 @@
         "behat/behat": ">=2.2.2",
         "behat/mink": ">=1.3.2",
         "facebook/php-webdriver": "*",
-        "fabpot/goutte": "*"
+        "fabpot/goutte": "*",
+        "symfony/process": "*"
     },
 
     "repositories": {
