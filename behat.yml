@@ -1,0 +1,5 @@
+# behat.yml
+default:
+  paths:
+    features:   '%%BEHAT_CONFIG_PATH%%'
+    bootstrap:  '%behat.paths.features%/bootstrap'
