@@ -31,7 +31,6 @@ class FeatureContext extends BehatContext
    *   Context parameters (set them up through behat.yml).
    */
   public function __construct(array $parameters) {
-
     $driver = new \Behat\Mink\Driver\Selenium2Driver('firefox', array());  
     $firefox = new \Behat\Mink\Session($driver);
     $driver = new \Behat\Mink\Driver\GoutteDriver();
@@ -40,6 +39,9 @@ class FeatureContext extends BehatContext
     $this->mink->setDefaultSessionName($parameters['default_browser']);
   }
 
+  /**
+   * Destructor function to close open sessions.
+   */
   public function __destruct() {
     $this->mink->stopSessions();
   }
