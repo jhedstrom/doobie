@@ -6,7 +6,7 @@ use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
-use Symfony\Process;
+use Symfony\Component\Process\Process;
 
 require 'vendor/.composer/autoload.php';
 
