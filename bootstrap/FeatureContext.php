@@ -47,40 +47,68 @@ class FeatureContext extends BehatContext
   }
 
   /**
-   * @Given /^that I am logged in as a user$/
+   * @Given /^I am viewing a sandbox repository that contains code$/
    */
-  public function thatIAmLoggedInAsAUser() {
-    // TODO: This method does not at all test what it sais.  Fix it.
+  public function iAmViewingASandboxRepositoryThatContainsCode() {
     $session = $this->mink->getSession();
-    $session->visit('http://drupal.org/node/add/project');
-    $page = $session->getPage()
-      ->findLink('Modules')
-      ->click();
-    $h1 = $session->getPage()
-      ->find('css', 'h1')
-      ->getText();
-    if ($h1 != 'Download & Extend') {
-      throw new Exception('Downlaod and extend was not found.');
+    $session->visit('http://drupal.org/sandbox/eliza411/1545884/');
+    $element = $session->getPage()
+      ->findLink('Version control');
+    if (!empty($element)) {
+      $element->click();
+    }
+    else {
+      throw new Exception('The version control tab was not found.');
     }
   }
 
   /**
-   * @When /^I create a new project$/
-   */
-  public function iCreateANewProject() {
-    /*
-    $page = $this->mink->getSession()->getPage();
-    echo $page->getContent();
-    $element = $page->find('h1');
-     echo $plainText = $element->getText() . "\n";
-     */
+  * @Given /^I see the Git command to perform an anonymous http clone$/
+  */
+  public function iSeeTheGitCommandToPerformAnAnonymousHttpClone() {
+    $page = $this->mink->getSession()
+      ->getPage();
+    $element = $page->find('css', '#content div.codeblock code');
+    if (!empty($element)) {
+      $this->gitCommand = $element->getText();
+    }
+    else {
+      throw new Exception('Commands could not be found.');
+    }
   }
 
   /**
-   * @Then /^I should be able to clone the sandbox repository\.$/
-   */
-  public function iShouldBeAbleToCloneTheSandboxRepository() {
-    //throw new PendingException();
+  * @When /^I execute that command the anonymous http clone$/
+  */
+  public function iExecuteThatCommandTheAnonymousHttpClone() {
+    $process = new Process($this->gitCommand);
+    $process->setTimeout(3600);
+    $process->run();
+    if (!$process->isSuccessful()) {
+      throw new RuntimeException('The clone did not work. - ' . $process->getErrorOutput());
+    }
+  }
+
+  /**
+  * @Then /^I should be have a copy of the cloned anonymous repository$/
+  */
+  public function iShouldBeHaveACopyOfTheClonedAnonymousRepository() {
+    if (!is_dir('doobie')) {
+      throw new Exception('The repo could not be found.');
+    }
+    $oldDirectory = getcwd();
+    chdir('doobie');
+    $process = new Process('git log');
+    $process->run();
+    if (!$process->isSuccessful()) {
+      throw new RuntimeException('The history for the repository could  not be found.' . $process->getErrorOutput());
+    }
+    chdir($oldDirectory);
+    $process = new Process('rm -rf doobie');
+    $process->run();
+    if (!$process->isSuccessful()) {
+      throw new Exception('ouch.' . $process->getErrorOutput());
+    }
   }
 
 }

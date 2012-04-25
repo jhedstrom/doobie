@@ -6,6 +6,7 @@ Feature: Visitor clones sandbox repository
 
   Scenario: Sandbox has a repo with code
 
-  Given that I am logged in as a user
-  When I create a new project
-  Then I should be able to clone the sandbox repository.
+  Given I am viewing a sandbox repository that contains code
+  And I see the Git command to perform an anonymous http clone
+  When I execute that command the anonymous http clone
+  Then I should be have a copy of the cloned anonymous repository
