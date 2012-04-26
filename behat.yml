@@ -2,7 +2,7 @@
 default:
   paths:
     features:   'features'
-    bootstrap:  'bootstrap'
+    bootstrap:  'features/bootstrap'
   context:
     parameters:
       default_browser: 'goutte'
