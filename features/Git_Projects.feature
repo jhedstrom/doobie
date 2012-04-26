@@ -8,5 +8,5 @@ Feature: Visitor clones sandbox repository
 
   Given I am viewing a sandbox repository that contains code
   And I see the Git command to perform an anonymous http clone
-  When I execute that command the anonymous http clone
-  Then I should be have a copy of the cloned anonymous repository
+  When I execute the anonymous http clone
+  Then I should have a copy of the cloned anonymous repository
