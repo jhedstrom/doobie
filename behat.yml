@@ -6,7 +6,7 @@ default:
   context:
     parameters:
       default_browser: 'goutte'
-
+      base_url: 'http://drupal.org/'
 selenium:
   context:
     parameters:
