@@ -1,3 +1,4 @@
+@drupalorg
 Feature: Download & Extend Modules page
   In order to find modules related to a module I'm using
   As any Drupal.org user
@@ -6,5 +7,5 @@ Feature: Download & Extend Modules page
   Scenario: Search for existing module
     Given I am at "/project/modules"
     When I search for "masquerade"
-    Then I should see a list of modules which mention masquerade
+    Then I should see the text "Masquerade"
 

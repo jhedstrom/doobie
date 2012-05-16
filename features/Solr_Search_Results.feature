@@ -1,3 +1,4 @@
+@solr
 Feature: Visitor searches site for Views
 
   As a visitor to Drupal.org
