@@ -11,10 +11,9 @@ Feature: Visitor clones sandbox repository
     And I see the Git command to perform an anonymous http clone
     When I execute the anonymous http clone
     Then I should have a copy of the cloned anonymous repository
-@now
-  Scenario: Sandbox has a repo with no code    
+  
+Scenario: Sandbox has a repo with no code    
     Given I am at "/project/git_dev"
     When I click "Version control"
-    Then I should see the text "Empty Repository"     
-    And I should see the text "asdfal;jfsd"
-    
+    Then I should see the heading "Empty Repository"     
+    And I should see the text "Git on Drupal.org"
