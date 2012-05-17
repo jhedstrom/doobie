@@ -1,4 +1,4 @@
-@drupalorg 
+@drupalorg @now
 Feature: Find Drupal services
   In order to find the right Drupal service provider for me
   As any user
@@ -23,7 +23,8 @@ Feature: Find Drupal services
 
   Scenario: See a filtered list of service providers
     Given I am at "marketplace-preview" 
-    And I click "Consulting"
-    And I click "Government"
+    When I click "Consulting"
+      And I click "Government"
     Then I should see the link "Achieve Internet"
+      And I should not see the link "2020Media"
    
