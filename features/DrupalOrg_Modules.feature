@@ -1,4 +1,4 @@
-@drupalorg
+@drupalorg @modules
 Feature: Download & Extend Modules page
   In order to find modules related to a module I'm using
   As any Drupal.org user

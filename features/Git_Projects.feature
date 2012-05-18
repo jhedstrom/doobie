@@ -1,4 +1,4 @@
-@git
+@git @projects
 Feature: Visitor clones sandbox repository
 
   As a visitor to Drupal.org

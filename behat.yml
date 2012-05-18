@@ -11,8 +11,6 @@ selenium:
   context:
     parameters:
       default_browser: 'firefox'
-git:
-    filters:
-        tags: '@git'
+progress:
     formatter:
         name: 'progress' 
