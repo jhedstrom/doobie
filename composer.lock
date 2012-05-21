@@ -18,7 +18,7 @@
         {
             "package": "fabpot/goutte",
             "version": "master-dev",
-            "source-reference": "master"
+            "source-reference": "5ecceb7c28a428fb93f283982cc4f5edfd96630b"
         },
         {
             "package": "facebook/php-webdriver",
