@@ -4,7 +4,7 @@ Feature: Find Drupal services
   I want to filter available providers by categories
 
   Scenario: Browse to the Marketplace preview page
-    Given I am at "/"
+    Given that I am at "/"
     When I click "Marketplace"
     Then I should see the link "Marketplace preview"
 
