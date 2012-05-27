@@ -21,13 +21,13 @@ Feature: Users must agree to the terms of service to commit code
 
   Scenario: Git User creates a project
     Given I am at "/node/add/project-project"
-    When I select the "Modules" radio button
+    When I select the radio button "Modules" with id "edit-project-type-14"
       And for "Maintenance status" I enter "13028" 
       And for "Development status" I enter "9988" 
       And for "Project title" I enter "Pink Ponies"
       And for "Description" I enter "Something"
       And I press "Save"
-   Then I should see the heading "Pink Ponies"
+   Then I should see the heading "Git User's sandbox: Pink Ponies"
 
   Scenario: Git User no longer agrees to terms of service
     Given I am at "/user"
