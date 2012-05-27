@@ -8,8 +8,7 @@ Feature: New users can commit code to Drupal.org
 
   Scenario: New Git has not agreed to terms of service
     Given I am at "/project/user"
-    Then I should see the text "To learn about projects"
-      And I should not see the link "Add a new project."
+    Then I should not see the link "Add a new project."
 
   Scenario: New Git agrees to terms of service
     Given I am at "/user"
