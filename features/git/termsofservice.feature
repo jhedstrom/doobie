@@ -4,7 +4,7 @@ Feature: Users must agree to the terms of service to commit code
   I need to agree to the terms of service before I can commit code
 
   Background: 
-    Given I am logged in as "Git User" with the password "gituser1"
+    Given I am logged in as a user with the "authenticated user" role
 
   Scenario: Git User agrees to terms of service for the first time
     Given I am at "/user"

@@ -7,6 +7,9 @@ default:
     parameters:
       default_browser: 'goutte'
       base_url: 'http://git6site.devdrupal.org'
+      # Set this drush alias in your aliases.drushrc.php file to match
+      # the base_url set above.
+      drush_alias: 'myalias'
 selenium:
   context:
     parameters:
