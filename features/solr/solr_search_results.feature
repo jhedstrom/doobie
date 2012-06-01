@@ -1,12 +1,12 @@
+@known_failure
 Feature: Visitor searches site for Views
 
-  As a visitor to Drupal.org
+  In order to see relevant search results and filters
+    As a visitor to Drupal.org
   I want to search for the term 'views'
-  So that I can see relevant search results and filters
-
+ 
   Scenario: Drupal.org has facet blocks on search results page
 
-  Given I am viewing search results page for term views
-  When I look at the sidebar
-  Then I should see a filter by block
-  And a search for block
+  When I visit "/search/apachesolr_search/views"
+  Then I should see the heading "or filter by…"
+    And I should see the heading "or search for…"
