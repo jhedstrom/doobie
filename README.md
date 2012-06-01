@@ -26,6 +26,8 @@ Doobie requires a Linux-based system.
 Helpful installation instructions are included on the project page:
 http://drupal.org/project/doobie
 
+When installation is complete, copy the default.behat.yml file to behat.yml and adjust the base url as needed.
+
 RUNNING TESTS
 -------------
 To run tests, change into the doobie project directory and run:

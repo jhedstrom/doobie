@@ -6,8 +6,12 @@ default:
   context:
     parameters:
       default_browser: 'goutte'
-
+      base_url: 'http://git6site.devdrupal.org'
 selenium:
   context:
     parameters:
       default_browser: 'firefox'
+      base_url: 'http://git6site.devdrupal.org'
+progress:
+    formatter:
+        name: 'progress' 
