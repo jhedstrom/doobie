@@ -7,8 +7,8 @@ Feature: Visitor clones repositories
   Scenario: Sandbox has a repo with code
 
       Given I am at "/project/doobie/git-instructions"
-      And I see the text "git clone --recursive --branch master http://git.drupal.org/project/doobie.git"
-    When I clone the repo
+#      And I see the text "git clone --recursive --branch master http://git.drupal.org/project/doobie.git"
+    When I clone the "doobie" repo
     Then I should have a local copy
   
   Scenario: Sandbox has a repo with no code    
