@@ -1,4 +1,4 @@
-@known_failure
+@known_git6failure
 Feature: Visitor searches site for Views
 
   In order to see relevant search results and filters
