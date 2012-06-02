@@ -4,7 +4,7 @@ Feature: Users must agree to the terms of service to commit code
   I need to agree to the terms of service before I can commit code
 
   Background: 
-    Given I am logged in as a user with the "authenticated user" role
+   Given I am logged in as a user with the "authenticated user" role
 
   Scenario: Git User agrees to terms of service for the first time
     Given I am at "/user"
@@ -27,7 +27,7 @@ Feature: Users must agree to the terms of service to commit code
       And for "Project title" I enter "Pink Ponies"
       And for "Description" I enter "Something"
       And I press "Save"
-   Then I should see the heading "Git User's sandbox: Pink Ponies"
+   Then I should see the text "Pink Ponies"
 
   Scenario: Git User no longer agrees to terms of service
     Given I am at "/user"
@@ -49,4 +49,4 @@ Feature: Users must agree to the terms of service to commit code
       And I check "I agree to these terms"
       And I press "Save"
     Then I should not see the text "You will not be able to use Git"
-      And I should see the text "Git user configuration"`
+      And I should see the text "Git user configuration"
