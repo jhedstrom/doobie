@@ -7,6 +7,9 @@ default:
     parameters:
       default_browser: 'goutte'
       base_url: 'http://git6site.devdrupal.org'
+      basic_auth:
+        username: 'drupal'
+        password: 'drupal'
       # Set this drush alias in your aliases.drushrc.php file to match
       # the base_url set above.
       drush_alias: 'myalias'
@@ -17,4 +20,4 @@ selenium:
       base_url: 'http://git6site.devdrupal.org'
 progress:
     formatter:
-        name: 'progress' 
+        name: 'progress'
