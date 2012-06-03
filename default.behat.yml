@@ -16,8 +16,13 @@ default:
 selenium:
   context:
     parameters:
-      default_browser: 'firefox'
+      default_browser: 'selenium_firefox'
       base_url: 'http://git6site.devdrupal.org'
 progress:
     formatter:
         name: 'progress'
+sahi:
+  context:
+    parameters:
+      default_browser: 'sahi_firefox'
+      base_url: 'http://git6site.devdrupal.org'
